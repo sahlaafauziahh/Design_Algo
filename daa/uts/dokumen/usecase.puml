@@ -1,0 +1,41 @@
+@startuml
+actor Admin
+actor "Manajer Armada" as Manager
+actor Supir
+
+usecase "Login ke Sistem" as UC1
+usecase "Logout dari Sistem" as UC2
+usecase "Tambah Data Supir" as UC3
+usecase "Edit Data Supir" as UC4
+usecase "Hapus Data Supir" as UC5
+usecase "Lihat Data Supir" as UC6
+usecase "Lihat Riwayat Kerja Supir" as UC7
+usecase "Lihat Ketersediaan Supir" as UC8
+usecase "Perbarui Status Supir" as UC9
+usecase "Catat Riwayat Perjalanan" as UC10
+usecase "Lihat Laporan Performa Supir" as UC11
+usecase "Perbarui Profil" as UC12
+
+Admin --> UC1
+Admin --> UC2
+Admin --> UC3
+Admin --> UC4
+Admin --> UC5
+Admin --> UC6
+Admin --> UC7
+Admin --> UC8
+
+Manager --> UC1
+Manager --> UC2
+Manager --> UC6
+Manager --> UC7
+Manager --> UC8
+Manager --> UC9
+Manager --> UC10
+Manager --> UC11
+
+Supir --> UC1
+Supir --> UC2
+Supir --> UC12
+Supir --> UC10
+@enduml

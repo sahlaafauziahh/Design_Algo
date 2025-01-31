@@ -1,0 +1,31 @@
+@startuml
+start
+:Admin atau Manajer login ke sistem;
+if (Login berhasil?) then (Ya)
+    :Tampilkan Dashboard;
+    if (Akses admin?) then (Ya)
+        :Admin mengelola data supir;
+        if (Tambah data supir?) then (Ya)
+            :Admin mengisi data supir;
+            :Data supir disimpan;
+        endif
+        if (Edit data supir?) then (Ya)
+            :Admin mengedit data supir;
+            :Data supir diperbarui;
+        endif
+        if (Hapus data supir?) then (Ya)
+            :Admin menghapus data supir;
+            :Data supir dihapus;
+        endif
+    else
+        :Manajer melihat data supir dan riwayat perjalanan;
+        if (Perbarui status supir?) then (Ya)
+            :Manajer mengubah status ketersediaan supir;
+            :Status diperbarui;
+        endif
+    endif
+else (Tidak)
+    :Tampilkan pesan error;
+endif
+stop
+@enduml
